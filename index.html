@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Voting System</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f5f5f5;
+            }
+            h1 {
+                font-size: 24px;
+                text-align: center;
+                margin-top: 20px;
+            }
+            form {
+                background-color: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+                padding: 20px;
+                margin: 20px auto;
+                max-width: 500px;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+                font-weight: bold;
+                color: #555;
+            }
+            input[type="radio"] {
+                margin-right: 10px;
+            }
+            input[type="submit"] {
+                background-color: #007bff;
+                border: none;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #0062cc;
+            }
+            .result {
+                margin-top: 20px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #555;
+            }
+        </style>
+        <script>
+            function countVotes() {
+                var option1 = 0;
+                var option2 = 0;
+                var option3 = 0;
+                var option4 = 0;
+                var option5 = 0;
+                var option6 = 0;
+                var selectedOption = document.querySelector('input[name="option"]:checked').value;
+                if (selectedOption == 1) {
+                    option1++;
+                } else if (selectedOption == 2) {
+                    option2++;
+                } else if (selectedOption == 3) {
+                    option3++;
+                } else if (selectedOption == 4) {
+                    option4++;
+                } else if (selectedOption == 5) {
+                    option5++;
+                } else if (selectedOption == 6) {
+                    option6++;
+                }
+                document.getElementById("result1").innerHTML = option1 + " votes";
+                document.getElementById("result2").innerHTML = option2 + " votes";
+                document.getElementById("result3").innerHTML = option3 + " votes";
+                document.getElementById("result4").innerHTML = option4 + " votes";
+                document.getElementById("result5").innerHTML = option5 + " votes";
+                document.getElementById("result6").innerHTML = option6 + " votes";
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Kush do ta fitoje bbvk?</h1>
+        <form onsubmit="countVotes(); return false;">
+            <label>
+                <input type="radio" name="option" value="1">
+                Stresi
+            </label>
+            <label>
+                <input type="radio" name="option" value="2">
+                Xhuli
+            </label>
+            <label>
+                <input type="radio" name="option" value="3">
+                Vedati
+                </label>
+                <label>
+                <input type="radio" name="option" value="4">
+                Artani
+                </label>
+                <label>
+                <input type="radio" name="option" value="5">
+                Gresa
+                </label>
+                <label>
+                <input type="radio" name="option" value="6">
+                Vedati
+                </label>
+                <input type="submit" value="Vote">
+                </form>
+                <div class="result">
+                <p>Results:</p>
+                <p>Stresi: <span id="result1">0 votes</span></p>
+                <p>Xhuli: <span id="result2">0 votes</span></p>
+                <p>Vedati: <span id="result3">0 votes</span></p>
+                <p>Artani: <span id="result4">0 votes</span></p>
+                <p>Gresa: <span id="result5">0 votes</span></p>
+                <p>Vedati: <span id="result6">0 votes</span></p>
+                </div>
+     
+</body>
+</html>
